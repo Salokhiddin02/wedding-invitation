@@ -1,0 +1,27 @@
+<section class="gallery">
+
+  <p class="mini">Bizning xotiralarimiz</p>
+
+  <h2>Baxtli onlar</h2>
+
+  <div class="carousel">
+
+    @for(image of images; let i = $index; track image){
+
+      <img
+
+      [src]="image"
+
+      [class.active]="i===current()"
+
+      [class.left]="i===((current()-1+images.length)%images.length)"
+
+      [class.right]="i===((current()+1)%images.length)"
+
+      >
+
+    }
+
+  </div>
+
+</section>

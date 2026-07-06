@@ -1,0 +1,131 @@
+.gallery{
+
+padding:120px 20px;
+
+background:#faf7f2;
+
+text-align:center;
+
+overflow:hidden;
+
+}
+
+.gallery h2{
+
+font-size:56px;
+
+margin-bottom:70px;
+
+font-family:'Cormorant Garamond',serif;
+
+}
+
+.carousel{
+
+position:relative;
+
+height:470px;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.carousel img{
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+width:320px;
+
+height:430px;
+
+object-fit:cover;
+
+border-radius:26px;
+
+transition:.7s;
+
+opacity:0;
+
+transform:translate(-50%,-50%) scale(.6);
+
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+}
+
+.carousel img.active{
+
+opacity:1;
+
+transform:translate(-50%,-50%) scale(1.15);
+
+z-index:5;
+
+filter:none;
+
+}
+
+.carousel img.left{
+
+opacity:.65;
+
+filter:blur(3px);
+
+transform:translate(-180%,-50%) scale(.85);
+
+z-index:2;
+
+}
+
+.carousel img.right{
+
+opacity:.65;
+
+filter:blur(3px);
+
+transform:translate(80%,-50%) scale(.85);
+
+z-index:2;
+
+}
+
+@media(max-width:768px){
+
+.carousel{
+
+height:330px;
+
+}
+
+.carousel img{
+
+width:210px;
+
+height:290px;
+
+}
+
+.carousel img.left{
+
+transform:translate(-140%,-50%) scale(.75);
+
+}
+
+.carousel img.right{
+
+transform:translate(40%,-50%) scale(.75);
+
+}
+
+.gallery h2{
+
+font-size:40px;
+
+}
+
+}

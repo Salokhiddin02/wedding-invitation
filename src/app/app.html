@@ -1,0 +1,24 @@
+@if (!opened()) {
+
+<app-loading-screen
+(openInvitation)="openInvitation()">
+</app-loading-screen>
+
+} @else {
+  <app-music-player></app-music-player>
+  
+<app-hero></app-hero>
+
+<app-countdown></app-countdown>
+
+<app-invitation></app-invitation>
+
+<app-timeline></app-timeline>
+
+<app-location></app-location>
+
+<app-gallery></app-gallery>
+
+<app-footer></app-footer>
+
+}

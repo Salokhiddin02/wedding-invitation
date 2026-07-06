@@ -1,0 +1,29 @@
+<div class="loading-screen">
+
+  <div class="card" [class.hide]="opened()">
+
+    <p class="subtitle">
+      Siz aziz mehmonimizsiz
+    </p>
+
+    <h1>
+      Azamat
+      <span>&</span>
+      Zulayxo
+    </h1>
+
+    <p class="text">
+      Sizni to'yimizga taklif qilamiz
+    </p>
+
+    <button (click)="open()">
+      💌 Taklifnomani ochish
+    </button>
+
+    <audio #music loop preload="auto">
+      <source src="assets/music/wedding.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
+</div>

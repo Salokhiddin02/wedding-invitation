@@ -1,0 +1,94 @@
+.countdown {
+
+    padding:100px 20px;
+
+    background:#faf7f2;
+
+    text-align:center;
+
+}
+
+h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:52px;
+
+margin-bottom:50px;
+
+}
+
+.grid{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+}
+
+.box{
+
+width:150px;
+
+padding:35px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.box span{
+
+font-size:52px;
+
+font-weight:bold;
+
+color:#c79b37;
+
+display:block;
+
+}
+
+.box p{
+
+margin-top:10px;
+
+font-family:'Poppins';
+
+}
+@media (max-width:768px){
+
+.grid{
+
+gap:15px;
+
+}
+
+.box{
+
+width:130px;
+
+padding:25px;
+
+}
+
+.box span{
+
+font-size:38px;
+
+}
+
+h2{
+
+font-size:42px;
+
+}
+
+}
