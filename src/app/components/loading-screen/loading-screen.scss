@@ -28,22 +28,24 @@
   pointer-events: none;
 }
 
-.top-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  font-size: 15px;
-  color: #666;
-  margin-bottom: 30px;
+.top-title{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  font-size:14px;
+  color:#666;
+  white-space:nowrap;
 }
 
 .top-title::before,
-.top-title::after {
-  content: "";
-  width: 70px;
-  height: 1px;
-  background: #b8860b;
+.top-title::after{
+  content:"";
+  flex:1;
+  max-width:70px;
+  height:1px;
+  background:#d4af37;
 }
 
 h1 {
