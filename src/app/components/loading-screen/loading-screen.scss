@@ -3,219 +3,199 @@
 }
 
 .loading-screen {
-  width: 100%;
-  height: 100vh;
-
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 20px;
-
-  background: linear-gradient(
-    135deg,
-    #faf7f2,
-    #f3ede2
-  );
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 .card {
-
   width: 100%;
-  max-width: 470px;
-
-  background: white;
-
-  border-radius: 32px;
-
-  padding: 70px 45px;
-
+  max-width: 560px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 50px 45px;
   text-align: center;
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.12);
-
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
   transition: .8s;
 }
 
-.card.hide{
-
-opacity:0;
-
-transform:
-scale(.9)
-translateY(-50px);
-
-pointer-events:none;
-
+.card.hide {
+  opacity: 0;
+  transform: scale(.92) translateY(-40px);
+  pointer-events: none;
 }
 
-.subtitle{
-
-font-family:'Poppins',sans-serif;
-
-letter-spacing:6px;
-
-text-transform:uppercase;
-
-font-size:13px;
-
-color:#888;
-
-margin-bottom:35px;
-
+.top-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 30px;
 }
 
-h1{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:78px;
-
-font-weight:600;
-
-line-height:1.05;
-
-color:#2f2f2f;
-
-margin:0;
-
+.top-title::before,
+.top-title::after {
+  content: "";
+  width: 70px;
+  height: 1px;
+  background: #b8860b;
 }
 
-h1 span{
-
-display:block;
-
-margin:10px 0;
-
-font-size:70px;
-
-color:#d4af37;
-
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 82px;
+  line-height: 1.05;
+  color: #2f2f2f;
+  margin: 0;
 }
 
-.text{
-
-margin:35px 0;
-
-font-family:'Poppins',sans-serif;
-
-font-size:18px;
-
-color:#666;
-
+h1 span {
+  display: block;
+  margin: 12px 0;
+  font-size: 64px;
+  color: #d4af37;
 }
 
-button{
-
-position:relative;
-
-overflow:hidden;
-
-padding:18px 42px;
-
-border:none;
-
-border-radius:50px;
-
-cursor:pointer;
-
-background:linear-gradient(
-135deg,
-#b8860b,
-#ffd700
-);
-
-color:white;
-
-font-size:18px;
-
-font-family:'Poppins',sans-serif;
-
-font-weight:600;
-
-transition:.35s;
-
+.date-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
 }
 
-button:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 20px 45px rgba(212,175,55,.4);
-
+.date-line span {
+  width: 70px;
+  height: 1px;
+  background: #d4af37;
 }
 
-button::before{
-
-content:"";
-
-position:absolute;
-
-left:-120%;
-
-top:0;
-
-width:60%;
-
-height:100%;
-
-background:rgba(255,255,255,.45);
-
-transform:skewX(-25deg);
-
-transition:.8s;
-
+.date-line p {
+  margin: 0;
+  color: #b8860b;
+  font-size: 20px;
 }
 
-button:hover::before{
-
-left:160%;
-
+.arabic {
+  font-size: 38px;
+  margin-top: 20px;
+  color: #b8860b;
 }
 
-audio{
-
-display:none;
-
+.uzbek {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #444;
+  font-style: italic;
 }
 
-@media(max-width:768px){
-
-.card{
-
-padding:55px 25px;
-
+.surah {
+  margin-top: 8px;
+  margin-bottom: 35px;
+  color: #777;
+  font-size: 18px;
 }
 
-h1{
-
-font-size:58px;
-
+button {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 360px;
+  padding: 18px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #b8860b, #ffd700);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  transition: .35s;
 }
 
-h1 span{
-
-font-size:54px;
-
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, .35);
 }
 
-.subtitle{
-
-letter-spacing:4px;
-
+button::before {
+  content: "";
+  position: absolute;
+  left: -120%;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: rgba(255,255,255,.4);
+  transform: skewX(-25deg);
+  transition: .8s;
 }
 
-.text{
-
-font-size:16px;
-
+button:hover::before {
+  left: 160%;
 }
 
-button{
-
-width:100%;
-
+audio {
+  display: none;
 }
 
+@media (max-width: 768px) {
+
+  .loading-screen {
+    padding: 16px;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 35px 22px;
+    border-radius: 24px;
+  }
+
+  .top-title {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .top-title::before,
+  .top-title::after {
+    width: 35px;
+  }
+
+  h1 {
+    font-size: 58px;
+  }
+
+  h1 span {
+    font-size: 48px;
+  }
+
+  .date-line p {
+    font-size: 18px;
+  }
+
+  .date-line span {
+    width: 35px;
+  }
+
+  .arabic {
+    font-size: 28px;
+  }
+
+  .uzbek {
+    font-size: 17px;
+  }
+
+  .surah {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  button {
+    max-width: 100%;
+    font-size: 18px;
+    padding: 16px 24px;
+  }
 }
