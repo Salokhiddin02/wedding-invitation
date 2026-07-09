@@ -1,65 +1,117 @@
-.buttons{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-margin-top:35px;
-
-flex-wrap:wrap;
-
+:host {
+  display: block;
 }
 
-.buttons a{
-
-padding:16px 34px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-family:'Poppins',sans-serif;
-
-font-weight:600;
-
-transition:.35s;
-
+.location {
+  padding: 120px 20px;
+  background: #faf7f0;
+  text-align: center;
 }
 
-.yandex{
-
-background:#ffcc00;
-
-color:#222;
-
+.mini {
+  letter-spacing: 6px;
+  font-size: 13px;
+  color: #b08b2b;
 }
 
-.google{
-
-background:white;
-
-border:2px solid #d4af37;
-
-color:#222;
-
+h2 {
+  margin-top: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 56px;
+  font-weight: 500;
+  color: #222;
 }
 
-.buttons a:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 15px 35px rgba(0,0,0,.15);
-
+.address {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #666;
 }
 
-.map{
+.gold-line {
+  width: 180px;
+  height: 2px;
+  margin: 35px auto 50px;
+  background: linear-gradient(to right, transparent, #c9a227, transparent);
+}
 
-overflow:hidden;
+.map {
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,.08);
+}
 
-border-radius:28px;
+.map iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  display: block;
+}
 
-box-shadow:0 20px 50px rgba(0,0,0,.12);
+.map-buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
 
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  padding: 17px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.google {
+  background: #c9a227;
+  color: #fff;
+}
+
+.yandex {
+  background: #fff;
+  color: #222;
+  border: 2px solid #c9a227;
+}
+
+.map-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(201,162,39,.28);
+}
+
+@media(max-width:768px) {
+  .location {
+    padding: 70px 15px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  .address {
+    font-size: 16px;
+  }
+
+  .map iframe {
+    height: 320px;
+  }
+
+  .map-buttons {
+    gap: 12px;
+  }
+
+  .map-btn {
+    width: 100%;
+    min-width: unset;
+    padding: 16px;
+    font-size: 16px;
+  }
 }

@@ -1,29 +1,37 @@
-<section id="countdown" class="countdown">
+<section class="countdown">
 
-    <h2>To'ygacha qoldi</h2>
+  <p class="mini">
+    TO'YGACHA
+  </p>
 
-    <div class="grid">
+  <h2>
+    Qancha vaqt qoldi?
+  </h2>
 
-        <div class="box">
-            <span>{{ days() }}</span>
-            <p>Kun</p>
-        </div>
+  <div class="gold-line"></div>
 
-        <div class="box">
-            <span>{{ hours() }}</span>
-            <p>Soat</p>
-        </div>
+  <div class="timer">
 
-        <div class="box">
-            <span>{{ minutes() }}</span>
-            <p>Daqiqa</p>
-        </div>
-
-        <div class="box">
-            <span>{{ seconds() }}</span>
-            <p>Soniya</p>
-        </div>
-
+    <div class="box">
+      <h1>{{ days() }}</h1>
+      <span>KUN</span>
     </div>
+
+    <div class="box">
+      <h1>{{ hours() }}</h1>
+      <span>SOAT</span>
+    </div>
+
+    <div class="box">
+      <h1>{{ minutes() }}</h1>
+      <span>DAQIQA</span>
+    </div>
+
+    <div class="box">
+      <h1>{{ seconds() }}</h1>
+      <span>SONIYA</span>
+    </div>
+
+  </div>
 
 </section>

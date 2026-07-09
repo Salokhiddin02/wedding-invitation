@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:"Poppins",sans-serif;
+
+  color:#333;
+
+  background:#faf7f2;
+
+  overflow-x:hidden;
+
+}
+
+section{
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+section::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:18px;
+  left:18px;
+  right:18px;
+  bottom:18px;
+
+  border:1px solid rgba(201,162,39,.12);
+
+  border-radius:28px;
+
+  pointer-events:none;
+
+}
+
+h1,h2,h3{
+
+  font-family:"Cormorant Garamond",serif;
+
+}
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#f4efe4;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#c9a227;
+
+border-radius:20px;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+button{
+
+font-family:inherit;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+@media(max-width:768px){
+
+section::before{
+
+top:10px;
+left:10px;
+right:10px;
+bottom:10px;
+
+border-radius:18px;
+
+}
+
+}

@@ -1,24 +1,27 @@
+<audio #player loop>
+  <source src="assets/music/wedding.mp3" type="audio/mpeg">
+</audio>
+
 @if (!opened()) {
 
-<app-loading-screen
-(openInvitation)="openInvitation()">
-</app-loading-screen>
+  <app-loading-screen
+    (openInvitation)="openInvitation()">
+  </app-loading-screen>
 
-} @else {
-  <app-music-player></app-music-player>
-  
-<app-hero></app-hero>
+}
 
-<app-countdown></app-countdown>
+@if (opened()) {
 
-<app-invitation></app-invitation>
+  <app-hero></app-hero>
 
-<app-timeline></app-timeline>
+  <app-countdown></app-countdown>
 
-<app-location></app-location>
+  <app-invitation></app-invitation>
 
-<app-gallery></app-gallery>
+  <app-timeline></app-timeline>
 
-<app-footer></app-footer>
+  <app-location></app-location>
+
+  <app-footer></app-footer>
 
 }
