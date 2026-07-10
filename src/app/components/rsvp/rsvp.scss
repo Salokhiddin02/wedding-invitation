@@ -123,6 +123,60 @@ h2 {
   line-height: 1.6;
 }
 
+.name-field {
+  position: relative;
+  z-index: 2;
+
+  margin-bottom: 30px;
+
+  text-align: left;
+}
+
+.name-field label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #3e3e3e;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.name-field input {
+  width: 100%;
+
+  padding: 17px 19px;
+
+  border: 1px solid rgba(201, 162, 39, .42);
+  border-radius: 14px;
+
+  outline: none;
+
+  color: #222;
+
+  background: rgba(255, 255, 255, .96);
+
+  font-family: inherit;
+  font-size: 16px;
+
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.name-field input:focus {
+  border-color: #c9a227;
+
+  box-shadow:
+    0 0 0 4px rgba(201, 162, 39, .12);
+}
+
+.name-field input:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
 .answer-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;

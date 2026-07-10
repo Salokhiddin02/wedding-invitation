@@ -16,12 +16,20 @@ interface RsvpResponse {
 })
 export class Rsvp {
 
+  guestName = signal('');
   attendance = signal<Attendance | null>(null);
   guestCount = signal(1);
 
   sending = signal(false);
   successMessage = signal('');
   errorMessage = signal('');
+
+  updateGuestName(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.guestName.set(input.value);
+    this.successMessage.set('');
+    this.errorMessage.set('');
+  }
 
   selectAttendance(value: Attendance): void {
     if (this.sending()) {
@@ -52,7 +60,16 @@ export class Rsvp {
   }
 
   async submit(): Promise<void> {
+    const cleanName = this.guestName().trim();
     const selectedAttendance = this.attendance();
+
+    this.successMessage.set('');
+    this.errorMessage.set('');
+
+    if (cleanName.length < 2) {
+      this.errorMessage.set('Iltimos, ismingizni kiriting.');
+      return;
+    }
 
     if (!selectedAttendance) {
       this.errorMessage.set(
@@ -72,8 +89,6 @@ export class Rsvp {
     }
 
     this.sending.set(true);
-    this.successMessage.set('');
-    this.errorMessage.set('');
 
     try {
       const response = await fetch('/api/rsvp', {
@@ -82,6 +97,7 @@ export class Rsvp {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+          guestName: cleanName,
           attendance: selectedAttendance,
           guestCount:
             selectedAttendance === 'yes'
@@ -90,25 +106,35 @@ export class Rsvp {
         })
       });
 
-      const result = await response.json() as RsvpResponse;
+      const rawText = await response.text();
+
+      let result: RsvpResponse = {};
+
+      try {
+        result = rawText ? JSON.parse(rawText) as RsvpResponse : {};
+      } catch {
+        console.error('Server JSON qaytarmadi:', rawText);
+      }
 
       if (!response.ok) {
         throw new Error(
-          result.message || 'Javobni yuborib bo‘lmadi.'
+          result.message || `Server xatosi: ${response.status}`
         );
       }
 
-      this.successMessage.set(
-        selectedAttendance === 'yes'
-          ? 'Rahmat! Javobingiz va mehmonlar soni yuborildi.'
-          : 'Rahmat! Javobingiz yuborildi.'
-      );
+      this.successMessage.set('Rahmat! Javobingiz yuborildi.');
+
+      this.guestName.set('');
+      this.attendance.set(null);
+      this.guestCount.set(1);
 
     } catch (error) {
       console.error('RSVP yuborish xatosi:', error);
 
       this.errorMessage.set(
-        'Javob yuborilmadi. Internetni tekshirib, qayta urinib ko‘ring.'
+        error instanceof Error
+          ? error.message
+          : 'Javob yuborilmadi. Qayta urinib ko‘ring.'
       );
     } finally {
       this.sending.set(false);

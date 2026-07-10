@@ -11,8 +11,25 @@
     </h2>
 
     <p class="description">
-      Iltimos, javoblardan birini tanlang.
+      Iltimos, ismingizni yozing va javoblardan birini tanlang.
     </p>
+
+    <div class="name-field">
+
+      <label for="guestName">
+        Ismingiz
+      </label>
+
+      <input
+        id="guestName"
+        type="text"
+        [value]="guestName()"
+        [disabled]="sending()"
+        maxlength="80"
+        autocomplete="name"
+        (input)="updateGuestName($event)">
+
+    </div>
 
     <div class="answer-buttons">
 
@@ -24,7 +41,6 @@
         (click)="selectAttendance('yes')">
 
         <span class="answer-icon">✓</span>
-
         <span>Kelaman</span>
 
       </button>
@@ -37,7 +53,6 @@
         (click)="selectAttendance('no')">
 
         <span class="answer-icon">×</span>
-
         <span>Kela olmayman</span>
 
       </button>
@@ -57,7 +72,6 @@
           <button
             type="button"
             class="counter-button"
-            aria-label="Mehmonlar sonini kamaytirish"
             [disabled]="sending() || guestCount() <= 1"
             (click)="decreaseCount()">
 
@@ -68,7 +82,6 @@
           <div class="count-value">
 
             <strong>{{ guestCount() }}</strong>
-
             <span>kishi</span>
 
           </div>
@@ -76,7 +89,6 @@
           <button
             type="button"
             class="counter-button"
-            aria-label="Mehmonlar sonini oshirish"
             [disabled]="sending() || guestCount() >= 20"
             (click)="increaseCount()">
 
@@ -109,7 +121,7 @@
     <button
       type="button"
       class="submit-button"
-      [disabled]="sending() || attendance() === null"
+      [disabled]="sending()"
       (click)="submit()">
 
       @if (sending()) {
