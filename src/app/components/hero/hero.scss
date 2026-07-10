@@ -135,7 +135,7 @@
 .names {
   margin: 55px 0 45px;
 
-  font-family: "Great Vibes", cursive;
+  font-family: "Italianno", cursive;
   font-size: 76px;
   font-weight: 400;
   line-height: 1.05;
@@ -219,14 +219,44 @@
     margin-top: 55px;
   }
 
+.names {
+  margin: 0 0 38px;
+
+  font-family: "Italianno", cursive;
+
+  font-size: 82px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: #151515;
+
+  text-shadow: 0 3px 12px rgba(0, 0, 0, .08);
+}
+
+.names span {
+  display: inline-block;
+
+  margin: 0 14px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: .82em;
+  font-weight: 500;
+
+  color: #c99f1c;
+
+  transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
   .names {
-    margin: 42px 0 30px;
-    font-size: 54px;
+    margin-bottom: 28px;
+    font-size: 58px;
   }
 
   .names span {
-    margin: 0 5px;
+    margin: 0 7px;
   }
+}
 
   .hero-gate {
     width: 100%;
