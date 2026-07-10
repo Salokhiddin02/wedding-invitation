@@ -7,7 +7,7 @@ import { Timeline } from './components/timeline/timeline';
 import { Location } from './components/location/location';
 import { Footer } from './components/footer/footer';
 import { LoadingScreen } from './components/loading-screen/loading-screen';
-
+import { Rsvp } from './components/rsvp/rsvp';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,7 +18,8 @@ import { LoadingScreen } from './components/loading-screen/loading-screen';
     Invitation,
     Timeline,
     Location,
-    Footer
+    Footer,
+    Rsvp
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

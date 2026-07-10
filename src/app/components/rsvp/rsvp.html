@@ -1,0 +1,125 @@
+<section class="rsvp">
+
+  <div class="rsvp-card">
+
+    <p class="mini-title">
+      ISHTIROKINGIZNI TASDIQLANG
+    </p>
+
+    <h2>
+      To‘yimizga kelasizmi?
+    </h2>
+
+    <p class="description">
+      Iltimos, javoblardan birini tanlang.
+    </p>
+
+    <div class="answer-buttons">
+
+      <button
+        type="button"
+        class="answer-button yes-button"
+        [class.active]="attendance() === 'yes'"
+        [disabled]="sending()"
+        (click)="selectAttendance('yes')">
+
+        <span class="answer-icon">✓</span>
+
+        <span>Kelaman</span>
+
+      </button>
+
+      <button
+        type="button"
+        class="answer-button no-button"
+        [class.active]="attendance() === 'no'"
+        [disabled]="sending()"
+        (click)="selectAttendance('no')">
+
+        <span class="answer-icon">×</span>
+
+        <span>Kela olmayman</span>
+
+      </button>
+
+    </div>
+
+    @if (attendance() === 'yes') {
+
+      <div class="guest-count-section">
+
+        <p class="count-title">
+          Necha kishi kelasiz?
+        </p>
+
+        <div class="counter">
+
+          <button
+            type="button"
+            class="counter-button"
+            aria-label="Mehmonlar sonini kamaytirish"
+            [disabled]="sending() || guestCount() <= 1"
+            (click)="decreaseCount()">
+
+            −
+
+          </button>
+
+          <div class="count-value">
+
+            <strong>{{ guestCount() }}</strong>
+
+            <span>kishi</span>
+
+          </div>
+
+          <button
+            type="button"
+            class="counter-button"
+            aria-label="Mehmonlar sonini oshirish"
+            [disabled]="sending() || guestCount() >= 20"
+            (click)="increaseCount()">
+
+            +
+
+          </button>
+
+        </div>
+
+      </div>
+
+    }
+
+    @if (errorMessage()) {
+
+      <p class="status-message error-message">
+        {{ errorMessage() }}
+      </p>
+
+    }
+
+    @if (successMessage()) {
+
+      <p class="status-message success-message">
+        {{ successMessage() }}
+      </p>
+
+    }
+
+    <button
+      type="button"
+      class="submit-button"
+      [disabled]="sending() || attendance() === null"
+      (click)="submit()">
+
+      @if (sending()) {
+        Yuborilmoqda...
+      } @else {
+        Javobni yuborish
+      }
+
+    </button>
+
+  </div>
+
+</section>
